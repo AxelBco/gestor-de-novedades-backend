@@ -7,7 +7,7 @@ app.use(cors());
 app.use(express.json());
 
 // Conexión a MongoDB Atlas
-mongoose.connect('mongodb+srv://admin:Kisha123.@cluster0.fn1yspo.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0', { useNewUrlParser: true, useUnifiedTopology: true });
+mongoose.connect(process.env.MONGODB_URI, { useNewUrlParser: true, useUnifiedTopology: true });
 
 // Esquema y modelo
 const ActividadSchema = new mongoose.Schema({
